@@ -1,8 +1,9 @@
 #include "main.h"
 #include <unistd.h>
 /**
- * _handle_s - Function that prints a string
+ * handle_s - Function that prints a string
  * @str: Point to string passed
+ * Return: None
  */
 void handle_s(char *str)
 {

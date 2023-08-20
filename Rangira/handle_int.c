@@ -26,13 +26,11 @@ void handle_int(int num)
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	}
-
-	for (j = 0; j < i / 2; j ++)
+	for (j = 0; j < i / 2; j++)
 	{
 		temp = str[j];
 		str[j] = str[i - j - 1];
 		str[i - j - 1] = temp;
 	}
 	write(1, str, sizeof(char) * i);
-	return;
 }

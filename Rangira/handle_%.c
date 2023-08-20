@@ -1,7 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 /**
- * hanle_mod - Function to handle %
+ * handle_mod - Function to handle %
  *
  * Return: None
  */
