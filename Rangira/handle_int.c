@@ -7,8 +7,8 @@
 
 void handle_int(int num)
 {
-	int i;
-	char str[20];
+	int i, j;
+	char temp, str[20];
 
 	if (num == 0)
 	{
@@ -26,9 +26,13 @@ void handle_int(int num)
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	}
-	while (i--)
+
+	for (j = 0; j < i / 2; j ++)
 	{
-		write(1, &str[i], 1);
+		temp = str[j];
+		str[j] = str[i - j - 1];
+		str[i - j - 1] = temp;
 	}
+	write(1, str, sizeof(char) * i);
 	return;
 }
