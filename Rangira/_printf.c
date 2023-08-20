@@ -5,6 +5,7 @@
 /**
  * _printf - Prints out what is passed
  * @format: Pointer to last argment
+ * @...: Pointer to infinity argument
  * Return: Number of characters
  */
 int _printf(const char *format, ...)
@@ -13,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list Args;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	va_start(Args, format);
 	while (format[i] != '\0')
 	{
@@ -33,9 +34,17 @@ int _printf(const char *format, ...)
 				case '%':
 					handle_mod();
 					break;
+				case 'd':
+					handle_int(va_arg(Args, int));
+					break;
+				case 'i':
+					handle_int(va_arg(Args, int));
+					break;
+				case 'u':
+				       handle_int(va_arg(Args, int));
+				       break;	       
 				default:
 					write(1, &format[i], 1);
-					j++;
 					break;
 			}
 		}
@@ -44,7 +53,8 @@ int _printf(const char *format, ...)
 			write(1, &format[i], 1);
 			j++;
 		}
-		i++;
+		i++;	
 	}
+	va_end(Args);
 	return (j);
 }
