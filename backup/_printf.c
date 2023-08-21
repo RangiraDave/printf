@@ -27,9 +27,7 @@ int _printf(const char *format, ...)
 			j += handle_mod(format[i]);
 			j += handle_int(Args, format[i]);
 			j += handle_hex(Args, format[i]);
-			j += handle_octal(Args, format[i]);
-			j += handle_un(Args, format[i]);
-			j += handle_rev(Args, format[i]);
+			j += handle_hex(Args, format[i]);
 		}
 		else
 		{
