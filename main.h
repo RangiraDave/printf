@@ -8,4 +8,5 @@ int handle_c(va_list passed_arg, char specifier);
 int handle_s(va_list passed_arg, char specifier);
 int handle_mod(char specifier);
 int handle_int(va_list passed_arg, char specifier);
+int handle_b(va_list passed_arg, char specifier);
 #endif

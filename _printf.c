@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 			j += handle_s(Args, format[i]);
 			j += handle_mod(format[i]);
 			j += handle_int(Args, format[i]);
+			j += handle_b(Args, format[i]);
 		}
 		else
 		{
