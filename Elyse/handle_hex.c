@@ -4,7 +4,14 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <ctype.h>
-
+/**
+  *handle_hex - prints hexadecimal numbers
+  *@...: passed arguments
+  *@specifier: check for the specifier
+  *@passed_args: arguments receiver
+  *
+  *Return: lenghth of the passed number
+  */
 int handle_hex(va_list passed_args, char specifier)
 {
 	unsigned int num = va_arg(passed_args, unsigned int);
@@ -12,9 +19,8 @@ int handle_hex(va_list passed_args, char specifier)
 	int idx_counter = 0;
 	char hex_num[] = "0123456789abcdefABCDEF";
 	char hex_size[64];
-	char u_str[64];
 
-	if (specifier != 'x' && specifier != 'X') 
+	if (specifier != 'x' && specifier != 'X')
 		return (0);
 	if (num == 0)
 	{
@@ -22,19 +28,20 @@ int handle_hex(va_list passed_args, char specifier)
 	}
 	else
 	{
-		do
-		{
+		do {
 			hex_size[idx_counter++] = hex_num[num % 16];
 			num /= 16;
-		}
-		while (num > 0);
+		} while (num > 0);
 	}
 
 
 	if (specifier == 'X')
 	{
-		u_str[idx_counter] = toupper(hex_size[idx_counter]);
-		write(1, u_str, sizeof(char) * idx_counter);
+		for (i = idx_counter - 1; i >= 0; i--)
+		{
+			hex_size[i] = toupper(hex_size[i]);
+			write(1, &hex_size[i], 1);
+		}
 	}
 	else
 	{

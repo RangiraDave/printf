@@ -19,6 +19,7 @@ int handle_hex(va_list passed_args, char specifier)
 	int idx_counter = 0;
 	char hex_num[] = "0123456789abcdefABCDEF";
 	char hex_size[64];
+	char u_str[64];
 
 	if (specifier != 'x' && specifier != 'X')
 		return (0);
@@ -37,11 +38,8 @@ int handle_hex(va_list passed_args, char specifier)
 
 	if (specifier == 'X')
 	{
-		for (i = idx_counter - 1; i >= 0; i--)
-		{
-			hex_size[i] = toupper(hex_size[i]);
-			write(1, &hex_size[i], 1);
-		}
+		u_str[idx_counter] = toupper(hex_size[idx_counter]);
+		write(1, u_str, sizeof(char) * idx_counter);
 	}
 	else
 	{
