@@ -3,9 +3,9 @@
 
 #include <stdarg.h>
 
-void handle_c(char c);
 int _printf(const char *format, ...);
-void handle_s(char *str);
-void handle_mod(void);
-void handle_int(int num);
+int handle_c(va_list passed_arg, char specifier);
+int handle_s(va_list passed_arg, char specifier);
+int handle_mod(char specifier);
+int handle_int(va_list passed_arg, char specifier);
 #endif

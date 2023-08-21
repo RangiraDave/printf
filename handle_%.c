@@ -1,12 +1,16 @@
 #include "main.h"
 #include <unistd.h>
 /**
- * hanle_mod - Function to handle %
- *
- * Return: None
+ * handle_mod - Function to handle %
+ * @specifier: The charactor to be checked
+ * Return: 0 or 1
  */
-void handle_mod(void)
+int handle_mod(char specifier)
 {
-	/*_printf("mod simbol: %%");*/
-	write(1, "%", 1);
+	if (specifier == '%')
+	{
+		write(1, "%", 1);
+		return (1);
+	}
+	return (0);
 }

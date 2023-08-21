@@ -1,19 +1,24 @@
 #include <unistd.h>
+#include <stdarg.h>
 /**
  * handle_int - Function to handle all integers.
- * @num: Number passed as argment
- * Return: 0
+ * @passed_arg: Passed character
+ * @specifier: The character to be checked
+ * Return: 1 or 0
  */
 
-void handle_int(int num)
+int handle_int(va_list passed_arg, char specifier)
 {
-	int i, j;
+	int num, i, j;
 	char temp, str[20];
 
+	if (specifier != 'd')
+		return (0);
+	num = va_arg(passed_arg, int);
 	if (num == 0)
 	{
 		write(1, "0", 1);
-		return;
+		return (1);
 	}
 	if (num < 0)
 	{
@@ -27,12 +32,12 @@ void handle_int(int num)
 		num /= 10;
 	}
 
-	for (j = 0; j < i / 2; j ++)
+	for (j = 0; j < i / 2; j++)
 	{
 		temp = str[j];
 		str[j] = str[i - j - 1];
 		str[i - j - 1] = temp;
 	}
 	write(1, str, sizeof(char) * i);
-	return;
+	return (i);
 }
