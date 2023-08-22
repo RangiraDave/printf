@@ -1,5 +1,3 @@
-# printf
-Repo for printf project
-```````````````````````
-here we will put details of each task
-Task 1:
+0x11. C - printf
+
+#creating the _printf function by Elyse Nshimyumukiza and Rangira David

@@ -27,21 +27,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-<<<<<<< HEAD
 			j += spec_handler(&format[i], Args);
 			while (specifier(format[i]))
 				i++;
-=======
-			j += handle_c(Args, format[i]);
-			j += handle_s(Args, format[i]);
-			j += handle_mod(format[i]);
-			j += handle_int(Args, format[i]);
-		}
-		else
-		{
-			write(1, &format[i], 1);
-			j++;
->>>>>>> parent of 7edd24b (Adding funtion to handle b)
 		}
 	write(1, &format[i], 1);
 	i++;
@@ -76,34 +64,25 @@ int spec_handler(const char *format, va_list Args)
 	switch (*format)
 	{
 		case 'c':
-			handle_c(Args);
-			break;
+			return (handle_c(Args));
 		case 's':
-			handle_s(Args);
-			break;
+			return (handle_s(Args));
 		case 'x':
 		case 'X':
-			handle_hex(Args, *format);
-			break;
+			return (handle_hex(Args, *format));
 		case '%':
-			handle_mod();
-			break;
+			return (handle_mod());
 		case 'd':
 		case 'i':
-			handle_int(Args);
-			break;
+			return (handle_int(Args));
 		case 'o':
-			handle_octal(Args);
-			break;
+			return (handle_octal(Args));
 		case 'u':
-			handle_un(Args);
-			break;
+			return (handle_un(Args));
 		case 'b':
-			handle_b(Args);
-			break;
+			return (handle_b(Args));
 		case 'p':
-			handle_addr(Args);
-			break;
+			return (handle_addr(Args));
 		default:
 			{
 				write(1, format, 1);
