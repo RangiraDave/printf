@@ -8,13 +8,13 @@
  *
  * Return: 1 or 0
  */
-int handle_b(va_list passed_args)
+int handle_b(va_list Args)
 {
 	int i, n;
 	char temp[64];
 
 	i = 0;
-	n = va_arg(passed_args, int);
+	n = va_arg(Args, int);
 	if (n == 0)
 	{
 		write(1, "0", 1);

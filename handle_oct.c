@@ -10,9 +10,9 @@
   *Return: lenght of the number
   */
 
-int handle_octal(va_list passed_args)
+int handle_octal(va_list Args)
 {
-	unsigned int n = va_arg(passed_args, unsigned int);
+	unsigned int n = va_arg(Args, unsigned int);
 	int i;
 	int idx_counter = 0;
 	char octal_size[12];

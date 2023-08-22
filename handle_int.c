@@ -6,12 +6,12 @@
  * Return: 1 or 0
  */
 
-int handle_int(va_list passed_args)
+int handle_int(va_list Args)
 {
 	int num, i, j;
 	char temp, str[20];
 
-	num = va_arg(passed_args, int);
+	num = va_arg(Args, int);
 	if (num == 0)
 	{
 		write(1, "0", 1);

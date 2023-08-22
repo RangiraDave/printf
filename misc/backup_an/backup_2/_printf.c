@@ -22,14 +22,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			j += handle_c(Args, format[i]);
-			j += handle_s(Args, format[i]);
-			j += handle_mod(format[i]);
-			j += handle_int(Args, format[i]);
-			j += handle_hex(Args, format[i]);
-			j += handle_octal(Args, format[i]);
-			j += handle_un(Args, format[i]);
-			j += handle_rev(Args, format[i]);
+			handle_c(Args, format[i]);
+			handle_s(Args, format[i]);
+			handle_mod(format[i]);
+			handle_int(Args, format[i]);
+			handle_hex(Args, format[i]);
+			handle_octal(Args, format[i]);
+			handle_un(Args, format[i]);
+			handle_rev(Args, format[i]);
 		}
 		else
 		{
