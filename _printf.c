@@ -27,9 +27,21 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+<<<<<<< HEAD
 			j += spec_handler(&format[i], Args);
 			while (specifier(format[i]))
 				i++;
+=======
+			j += handle_c(Args, format[i]);
+			j += handle_s(Args, format[i]);
+			j += handle_mod(format[i]);
+			j += handle_int(Args, format[i]);
+		}
+		else
+		{
+			write(1, &format[i], 1);
+			j++;
+>>>>>>> parent of 7edd24b (Adding funtion to handle b)
 		}
 	write(1, &format[i], 1);
 	i++;
