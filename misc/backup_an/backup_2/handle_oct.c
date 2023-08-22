@@ -16,7 +16,7 @@ int handle_octal(va_list passed_args, char specifier)
 	unsigned int n = va_arg(passed_args, unsigned int);
 	int i;
 	int idx_counter = 0;
-	/*char octal_num[] = "01234567";*/
+	char octal_num[] = "01234567";
 	char octal_size[12];
 
 	if (specifier != 'o')
@@ -28,7 +28,7 @@ int handle_octal(va_list passed_args, char specifier)
 	else
 	{
 		do {
-			octal_size[idx_counter++] = n % 8;
+			octal_size[idx_counter++] = octal_num[n % 8];
 			n /= 8;
 		} while (n > 0);
 	}

@@ -74,7 +74,7 @@ int spec_handler(const char *format, va_list Args)
 			handle_hex(Args, *format);
 			break;
 		case '%':
-			handle_mod(Args);
+			handle_mod();
 			break;
 		case 'd':
 		case 'i':

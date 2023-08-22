@@ -10,9 +10,9 @@
   *
   *Return: length of the digit
   */
-int handle_un(va_list Args)
+int handle_un(va_list passed_args)
 {
-	unsigned int num = va_arg(Args, unsigned int);
+	unsigned int num = va_arg(passed_args, unsigned int);
 	char *un_str;
 	unsigned int tmp;
 	int n_digits = 0;

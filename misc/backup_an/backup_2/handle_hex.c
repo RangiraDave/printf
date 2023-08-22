@@ -17,12 +17,12 @@ int handle_hex(va_list passed_args, char specifier)
 	unsigned int num = va_arg(passed_args, unsigned int);
 	int i;
 	int idx_counter = 0;
-	char hex_num[] = "0123456789abcdef";
+	char hex_num[] = "0123456789abcdefABCDEF";
 	char hex_size[64];
 	char u_str[64];
 
 	if (specifier != 'x' && specifier != 'X')
-		return (-1);
+		return (-11);
 	if (num == 0)
 	{
 		hex_size[idx_counter++] = '0';

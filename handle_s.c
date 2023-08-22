@@ -5,12 +5,12 @@
  * @passed_args: Passed character
  * Return: 1 or 0
  */
-int handle_s(va_list Args)
+int handle_s(va_list passed_args)
 {
 	int i;
 	char *str;
 
-	str = va_arg(Args, char*);
+	str = va_arg(passed_args, char*);
 
 	if (!str)
 		str = "(null)";
