@@ -9,11 +9,9 @@ int handle_c(va_list passed_args)
 {
 	char c;
 
-	{
-		c = (char) va_arg(passed_args, int);
-		if (!c)
-			return (0);
-		write(1, &c, 1);
-		return (1);
-	}
+	c = (char) va_arg(passed_args, int);
+	if (!c)
+		return (0);
+	write(1, &c, 1);
+	return (1);
 }
