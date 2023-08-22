@@ -2,18 +2,15 @@
 #include <unistd.h>
 /**
  * handle_s - Function that prints a string
- * @passed_arg: Passed character
- * @specifier: The character to be checked
+ * @passed_args: Passed character
  * Return: 1 or 0
  */
-int handle_s(va_list passed_arg, char specifier)
+int handle_s(va_list passed_args)
 {
 	int i;
 	char *str;
 
-	if (specifier != 's')
-		return (0);
-	str = va_arg(passed_arg, char*);
+	str = va_arg(passed_args, char*);
 	if (!str)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)

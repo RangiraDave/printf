@@ -2,10 +2,10 @@
 #include <unistd.h>
 /**
  * handle_mod - Function to handle %
- * @specifier: The charactor to be checked
+ *
  * Return: 0 or 1
  */
-int handle_mod()
+int handle_mod(void)
 {
 
 	{

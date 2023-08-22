@@ -2,17 +2,16 @@
 #include <stdarg.h>
 /**
  * handle_int - Function to handle all integers.
- * @passed_arg: Passed character
- * @specifier: The character to be checked
+ * @passed_args: Passed character
  * Return: 1 or 0
  */
 
-int handle_int(va_list passed_arg)
+int handle_int(va_list passed_args)
 {
 	int num, i, j;
 	char temp, str[20];
 
-	num = va_arg(passed_arg, int);
+	num = va_arg(passed_args, int);
 	if (num == 0)
 	{
 		write(1, "0", 1);

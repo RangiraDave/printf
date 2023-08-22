@@ -7,7 +7,6 @@
 /**
   *handle_un - measure the size of the number
   *@passed_args: argument received
-  *@specifier: chceks for appropriate specifier
   *
   *Return: length of the digit
   */

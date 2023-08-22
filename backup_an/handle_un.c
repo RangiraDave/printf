@@ -7,10 +7,11 @@
 /**
   *handle_un - measure the size of the number
   *@passed_args: argument received
+  *@specifier: chceks for appropriate specifier
   *
   *Return: length of the digit
   */
-int handle_un(va_list passed_args)
+int handle_un(va_list passed_args, char specifier)
 {
 	unsigned int num = va_arg(passed_args, unsigned int);
 	char *un_str;
@@ -19,6 +20,8 @@ int handle_un(va_list passed_args)
 
 	tmp = num;
 
+	if (specifier != 'u')
+		return (0);
 	un_str = malloc(sizeof(char) * (n_digits + 1));
 
 	if (num == 0)

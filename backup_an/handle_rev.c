@@ -6,16 +6,20 @@
 /**
   *handle_rev - prints a string which is reversed
   *@passed_args: received arguments by the function
+  *@specifier: checks for the specifier
   *
   *Return: number of printed characters
   */
-int handle_rev(va_list passed_args)
+int handle_rev(va_list passed_args, char specifier)
 {
 	char *rev_str;
 	int i = 0;
 	int j;
 
 	rev_str = va_arg(passed_args, char*);
+
+	if (specifier != 'r')
+		return (0);
 
 	if (rev_str == NULL)
 		return (0);

@@ -4,17 +4,17 @@
 #include <stdlib.h>
 /**
  * handle_b - Function to hundle b
- * @passed_arg: Passed argment
- * @specifier: Character to be checked
+ * @passed_args: Passed argment
+ *
  * Return: 1 or 0
  */
-int handle_b(va_list passed_arg)
+int handle_b(va_list passed_args)
 {
 	int i, n;
 	char temp[64];
 
 	i = 0;
-	n = va_arg(passed_arg, int);
+	n = va_arg(passed_args, int);
 	if (n == 0)
 	{
 		write(1, "0", 1);

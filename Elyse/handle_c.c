@@ -2,17 +2,15 @@
 #include <unistd.h>
 /**
  * handle_c - Function to handle c
- * @passed_arg: Passed character
- * @specifier: The character to be checked
+ * @passed_args: Passed character
  * Return: 1
  */
-int handle_c(va_list passed_arg, char specifier)
+int handle_c(va_list passed_args)
 {
 	char c;
 
-	if (specifier == 'c')
 	{
-		c = (char) va_arg(passed_arg, int);
+		c = (char) va_arg(passed_args, int);
 		write(1, &c, 1);
 		return (1);
 	}

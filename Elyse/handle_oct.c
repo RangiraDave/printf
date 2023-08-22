@@ -6,7 +6,6 @@
 /**
   *handle_octal - it handles octal values
   *@passed_args: arguments received
-  *@specifier: check for specifier
   *
   *Return: lenght of the number
   */
@@ -17,7 +16,7 @@ int handle_octal(va_list passed_args)
 	int i;
 	int idx_counter = 0;
 	char octal_size[12];
-	
+
 	if (n == 0)
 	{
 		octal_size[idx_counter++] = '0';
