@@ -26,18 +26,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			j++;
 			i++;
 			j += spec_handler(&format[i], Args);
 			while (specifier(format[i]))
 				i++;
 		}
-		else
-		{
-			write(1, &format[i], 1);
-			j ++;
-		}
-		i++;
+	write(1, &format[i], 1);
+	i++;
+	j++;
 	}
 
 	va_end(Args);
