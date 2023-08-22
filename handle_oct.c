@@ -17,9 +17,6 @@ int handle_octal(va_list passed_args)
 	int idx_counter = 0;
 	char octal_size[12];
 
-	if (octal_size == NULL)
-		return (-1);
-
 	if (n == 0)
 	{
 		octal_size[idx_counter++] = '0';

@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <stdarg.h>
-#include <stdlib.h>
 /**
  * handle_int - Function to handle all integers.
  * @passed_args: Passed character
@@ -11,10 +10,6 @@ int handle_int(va_list passed_args)
 {
 	int num, i, j;
 	char temp, str[20];
-
-
-	if (str == NULL)
-		return (-1);
 
 	num = va_arg(passed_args, int);
 	if (num == 0)

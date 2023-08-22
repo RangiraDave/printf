@@ -11,6 +11,7 @@ int handle_s(va_list passed_args)
 	char *str;
 
 	str = va_arg(passed_args, char*);
+
 	if (!str)
 		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)

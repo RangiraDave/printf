@@ -19,10 +19,10 @@ int handle_rev(va_list passed_args, char specifier)
 	rev_str = va_arg(passed_args, char*);
 
 	if (specifier != 'r')
-		return (0);
+		return (-1);
 
 	if (rev_str == NULL)
-		return (0);
+		return (-1);
 
 	i = strlen(rev_str);
 

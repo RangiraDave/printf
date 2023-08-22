@@ -2,7 +2,6 @@
 #define MAIN_H
 
 #include <stdarg.h>
-#include <stdlib.h>
 
 int _printf(const char *format, ...);
 int specifier(char c);
@@ -15,6 +14,7 @@ int handle_hex(va_list passed_args, char specifier);
 int handle_octal(va_list passed_args);
 int handle_un(va_list passed_args);
 int print_un(char *un_str, int n_digits, unsigned int num);
+int handle_addr(va_list passed_args);
 int handle_rev(va_list passed_args);
 int handle_b(va_list passed_args);
 #endif

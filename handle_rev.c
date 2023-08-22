@@ -17,10 +17,8 @@ int handle_rev(va_list passed_args)
 
 	rev_str = va_arg(passed_args, char*);
 
-	rev_str = malloc(sizeof(char) * strlen(rev_str));
-
 	if (rev_str == NULL)
-		return (-1);
+		return (0);
 
 	i = strlen(rev_str);
 
@@ -28,7 +26,5 @@ int handle_rev(va_list passed_args)
 	{
 		write(1, &rev_str[j], 1);
 	}
-
-	free(rev_str);
 	return (i);
 }

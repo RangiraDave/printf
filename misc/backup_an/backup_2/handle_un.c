@@ -21,22 +21,26 @@ int handle_un(va_list passed_args, char specifier)
 	tmp = num;
 
 	if (specifier != 'u')
-		return (0);
-	un_str = malloc(sizeof(char) * (n_digits + 1));
+		return (-1);
 
-	if (num == 0)
-	{
-		if (un_str == NULL)
-		{
-			return (-1);
-		}
-		strcpy(un_str, "0");
-		return (0);
-	}
 	do {
 		tmp /= 10;
 		n_digits++;
 	} while (tmp > 0);
+
+	un_str = malloc(sizeof(char) * (n_digits + 1));
+	
+	if (un_str == NULL)
+	{
+		return (-1);
+	}
+	if (num == 0)
+	{
+		strcpy(un_str, "0");
+		return (0);
+	}
+
+	print_un(un_str, n_digits, num);
 
 	return (n_digits);
 }

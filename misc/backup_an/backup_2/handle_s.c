@@ -12,7 +12,7 @@ int handle_s(va_list passed_arg, char specifier)
 	char *str;
 
 	if (specifier != 's')
-		return (0);
+		return (-1);
 	str = va_arg(passed_arg, char*);
 	if (!str)
 		str = "(null)";

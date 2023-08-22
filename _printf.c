@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 int specifier(char c)
 {
 	return (c == 'c' || c == 's' || c == 'x' || c == 'X' || c == 'd' ||
-		c == '%' || c == 'i' || c == 'o' || c == 'u' || c == 'b');
+		c == '%' || c == 'i' || c == 'o' || c == 'u' || c == 'b' || c == 'p');
 }
 
 /**
@@ -64,23 +64,34 @@ int spec_handler(const char *format, va_list Args)
 	switch (*format)
 	{
 		case 'c':
-			return (handle_c(Args));
+			handle_c(Args);
+			break;
 		case 's':
-			return (handle_s(Args));
+			handle_s(Args);
+			break;
 		case 'x':
 		case 'X':
-			return (handle_hex(Args, *format));
+			handle_hex(Args, *format);
+			break;
 		case '%':
-			return (handle_mod());
+			handle_mod();
+			break;
 		case 'd':
 		case 'i':
-			return (handle_int(Args));
+			handle_int(Args);
+			break;
 		case 'o':
-			return (handle_octal(Args));
+			handle_octal(Args);
+			break;
 		case 'u':
-			return (handle_un(Args));
+			handle_un(Args);
+			break;
 		case 'b':
-			return (handle_b(Args));
+			handle_b(Args);
+			break;
+		case 'p':
+			handle_addr(Args);
+			break;
 		default:
 			{
 				write(1, format, 1);

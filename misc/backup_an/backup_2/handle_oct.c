@@ -19,8 +19,8 @@ int handle_octal(va_list passed_args, char specifier)
 	char octal_num[] = "01234567";
 	char octal_size[12];
 
-	if (specifier != 'o' && specifier != 'i')
-		return (0);
+	if (specifier != 'o')
+		return (-1);
 	if (n == 0)
 	{
 		octal_size[idx_counter++] = '0';

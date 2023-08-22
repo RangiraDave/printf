@@ -19,21 +19,24 @@ int handle_un(va_list passed_args)
 
 	tmp = num;
 
-	un_str = malloc(sizeof(char) * (n_digits + 1));
-
-	if (num == 0)
-	{
-		if (un_str == NULL)
-		{
-			return (-1);
-		}
-		strcpy(un_str, "0");
-		return (0);
-	}
 	do {
 		tmp /= 10;
 		n_digits++;
 	} while (tmp > 0);
+
+	un_str = malloc(sizeof(char) * (n_digits + 1));
+
+	if (un_str == NULL)
+	{
+		return (-1);
+	}
+	if (num == 0)
+	{
+		strcpy(un_str, "0");
+		return (0);
+	}
+
+	print_un(un_str, n_digits, num);
 
 	return (n_digits);
 }
@@ -54,15 +57,16 @@ int print_un(char *un_str, int n_digits, unsigned int num)
 	{
 		return (-1);
 	}
-	for (i = n_digits - 1; i >= 0; i--)
+	for (i = 0; i <= n_digits; i++)
 	{
 		un_str[i] = '0' + (num % 10);
 		num /= 10;
 	}
 	un_str[n_digits] = '\0';
-
-
-	write(1, un_str, strlen(un_str));
+	for (i = n_digits - 1; i >= 0; i--)
+	{
+		write(1, &un_str[i], 1);
+	}
 
 	free(un_str);
 	return (n_digits);
