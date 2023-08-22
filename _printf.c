@@ -14,24 +14,46 @@ int _printf(const char *format, ...)
 	va_list Args;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	va_start(Args, format);
 	while (format[i] != '\0')
 	{
+		if (format[i] == '%')
+		/*_printf("Ans is: %c", a, "another str");
+		*/
 		{
-			if (format[i] == '%')
+			i++;
+			switch(format[i])
 			{
-				i++;
-
-				switch (format[i])
-				{
-					case 'c': j += handle_c(a
+				case 'c':
+					handle_c(va_arg(Args, int));
+					break;
+				case 's':
+					handle_s(va_arg(Args, char*));
+					break;
+				case '%':
+					handle_mod();
+					break;
+				case 'd':
+					handle_int(va_arg(Args, int));
+					break;
+				case 'i':
+					handle_int(va_arg(Args, int));
+					break;
+				case 'u':
+				       handle_int(va_arg(Args, int));
+				       break;	       
+				default:
+					write(1, &format[i], 1);
+					break;
+			}
 		}
 		else
 		{
 			write(1, &format[i], 1);
 			j++;
 		}
+		i++;	
 	}
 	va_end(Args);
 	return (j);
