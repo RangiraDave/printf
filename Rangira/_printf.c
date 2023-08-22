@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 				default:
 					write(1, &format[i], 1);
 					break;
+					j++;
 			}
 		}
 		else

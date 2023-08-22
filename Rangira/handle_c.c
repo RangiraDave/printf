@@ -8,8 +8,8 @@
  */
 void handle_c(char c)
 {
-	if (c == '\0')
-		c = NULL;
+	if (!c)
+		return;
 	if (c != '\0')
 		write(1, &c, 1);
 }
