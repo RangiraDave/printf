@@ -20,6 +20,9 @@ int handle_hex(va_list passed_args, char specifier)
 	char hex_num[] = "0123456789abcdefABCDEF";
 	char hex_size[64];
 
+	if (hex_size == NULL)
+		return (-1);
+
 	if (num == 0)
 	{
 		hex_size[idx_counter++] = '0';

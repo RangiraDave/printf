@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <string.h>
 /**
  * handle_s - Function that prints a string
  * @passed_args: Passed character
@@ -13,7 +14,12 @@ int handle_s(va_list passed_args)
 	str = va_arg(passed_args, char*);
 	if (!str)
 		str = "(null)";
+	if (str == NULL)
+		return (-1);
 	for (i = 0; str[i] != '\0'; i++)
+	{
 		write(1, &str[i], 1);
+	}
+
 	return (i);
 }

@@ -15,7 +15,10 @@ int handle_octal(va_list passed_args)
 	unsigned int n = va_arg(passed_args, unsigned int);
 	int i;
 	int idx_counter = 0;
-	char octal_size[12];
+	char octal_size[12];	
+
+	if (octal_size == NULL)
+		return (-1);
 
 	if (n == 0)
 	{
