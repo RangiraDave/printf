@@ -5,9 +5,9 @@
  * @specifier: The charactor to be checked
  * Return: 0 or 1
  */
-int handle_mod(char specifier)
+int handle_mod()
 {
-	if (specifier == '%')
+
 	{
 		write(1, "%", 1);
 		return (1);

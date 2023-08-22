@@ -7,13 +7,11 @@
  * Return: 1 or 0
  */
 
-int handle_int(va_list passed_arg, char specifier)
+int handle_int(va_list passed_arg)
 {
 	int num, i, j;
 	char temp, str[20];
 
-	if (specifier != 'd' && specifier != 'i')
-		return (0);
 	num = va_arg(passed_arg, int);
 	if (num == 0)
 	{

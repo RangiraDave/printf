@@ -11,35 +11,29 @@
   *Return: lenght of the number
   */
 
-int handle_octal(va_list passed_args, char specifier)
+int handle_octal(va_list passed_args)
 {
 	unsigned int n = va_arg(passed_args, unsigned int);
 	int i;
 	int idx_counter = 0;
 	char octal_size[12];
-
-	if (specifier == 'o')
+	
+	if (n == 0)
 	{
-		if (n == 0)
-		{
-			octal_size[idx_counter++] = '0';
-		}
-		else
-		{
-			do {
-				octal_size[idx_counter++] = n % 8 + '0';
-				n /= 8;
-			} while (n > 0);
-		}
-		octal_size[idx_counter] = '\0';
-		for (i = idx_counter - 1; i >= 0; i--)
-		{
-			write(1, &octal_size[i], 1);
-		}
-		return (idx_counter);
+		octal_size[idx_counter++] = '0';
 	}
 	else
 	{
-		return (0);
+		do {
+			octal_size[idx_counter++] = n % 8 + '0';
+			n /= 8;
+		} while (n > 0);
 	}
+	octal_size[idx_counter] = '\0';
+	for (i = idx_counter - 1; i >= 0; i--)
+	{
+		write(1, &octal_size[i], 1);
+	}
+	return (idx_counter);
 }
+

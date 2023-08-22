@@ -8,13 +8,11 @@
  * @specifier: Character to be checked
  * Return: 1 or 0
  */
-int handle_b(va_list passed_arg, char specifier)
+int handle_b(va_list passed_arg)
 {
 	int i, n;
 	char temp[64];
 
-	if (specifier != 'b')
-		return (0);
 	i = 0;
 	n = va_arg(passed_arg, int);
 	if (n == 0)

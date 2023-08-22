@@ -11,7 +11,7 @@
   *
   *Return: length of the digit
   */
-int handle_un(va_list passed_args, char specifier)
+int handle_un(va_list passed_args)
 {
 	unsigned int num = va_arg(passed_args, unsigned int);
 	char *un_str;
@@ -20,8 +20,6 @@ int handle_un(va_list passed_args, char specifier)
 
 	tmp = num;
 
-	if (specifier != 'u')
-		return (0);
 	un_str = malloc(sizeof(char) * (n_digits + 1));
 
 	if (num == 0)

@@ -16,20 +16,16 @@ int _printf(const char *format, ...)
 	i = 0;
 	j = 0;
 	va_start(Args, format);
-	for (i = 0; format[i] != '\0'; i++)
+	while (format[i] != '\0')
 	{
-
-		if (format[i] == '%')
 		{
-			i++;
-			j += handle_c(Args, format[i]);
-			j += handle_s(Args, format[i]);
-			j += handle_mod(format[i]);
-			j += handle_int(Args, format[i]);
-			j += handle_hex(Args, format[i]);
-			j += handle_octal(Args, format[i]);
-			j += handle_un(Args, format[i]);
-			j += handle_rev(Args, format[i]);
+			if (format[i] == '%')
+			{
+				i++;
+
+				switch (format[i])
+				{
+					case 'c': j += handle_c(a
 		}
 		else
 		{
